@@ -1,0 +1,11 @@
+clc
+clear;
+close
+
+fileID = fopen('Buck');
+
+% fmt = ''
+% opt = {'CollectOutput', true, 'HeaderLines' ,2};
+% out = textscan(fileID,fmt,opt{:});
+
+testo=char()
