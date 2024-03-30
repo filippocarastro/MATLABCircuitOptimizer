@@ -1,12 +1,12 @@
 * C:\Users\Filippo\Documents\PhD\MATLAB\Course\MATLABCircuitOptimizer\Buck.asc
-M1 IN N001 SW SW BCDMOS l=600n w=8m
-M2 SW N002 0 0 BCDMOS l=600n w=10m
+M1 IN N001 SW SW BCDMOS l=600n w=$W1
+M2 SW N002 0 0 BCDMOS l=600n w=$W2
 V1 N002 0 PULSE(5 0 1u 2n 2n 1u 2u)
 V2 N001 SW PULSE(0 5 1u 2n 2n 1u 2u)
 VIN IN 0 24
-L SW OUT 2.2µ
+L SW OUT 2.2u
 RLOAD OUT 0 12
-Co OUT 0 47µ
+Co OUT 0 47u
 .model NMOS NMOS
 .model PMOS PMOS
 .lib C:\Users\Filippo\AppData\Local\LTspice\lib\cmp\standard.mos

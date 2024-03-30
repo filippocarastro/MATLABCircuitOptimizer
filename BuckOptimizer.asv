@@ -2,10 +2,39 @@ clc
 clear;
 close
 
-fileID = fopen('Buck');
+%Imposto i nomi dei path dei vari file
+spicePath = 'C:\Users\Filippo\AppData\Local\Programs\ADI\LTspice\LTspice.exe'; % This is the path to your LT Spice installation
+filePath = 'C:\Users\Filippo\Documents\LTspice\'; %This is the path to the working LTSPICE folder (schems, netlists, simulation output files)
+fileName = 'Buck_opt'; %netlist to be optimized
+RunLTstring = sprintf('"%s" -b "%s%s.net"',spicePath, filePath, fileName); %Comando per lanciare la simulazione della netlist
 
-% fmt = ''
-% opt = {'CollectOutput', true, 'HeaderLines' ,2};
-% out = textscan(fileID,fmt,opt{:});
+%Prova di letturadella netlist (e sostituzione parametri W mos1 e W mos2)
+netlist_filename = strcat(filePath,"Buck.net"); %original netlist with param
+h = fopen(netlist_filename,'r');
+Testo=fread(h,Inf,'char');
+Testo=strrep(Testo,'$W1',num2str(0.01)); %Prova W = 10mm
+Testo=strrep(Testo,'$W2',num2str(0.01)); %Prova W = 10mm
+fclose(h);
 
-testo=char()
+hdest=fopen('"%s%s.net"', filePath, fileName,'w');
+fwrite(hdest,Testo,'char');
+fclose(hdest);
+
+%Prova di simulazione della netlist
+[status,cmdout] = system(RunLTstring);
+if(status) 
+    fprintf('ERROR, LTSpice sim failed to run.\n ');
+    return;
+end
+
+
+%%Read results (in this case only efficiency, but later must be optimized
+%%Area)
+output_filename = strcat(filePath,"Buck.log");
+fileID = fopen(output_filename);
+
+Testo=char(fread(fileID,Inf,'char'))';
+fclose(fileID);
+wordString = 'eff: pout/pin=';
+newStr = extractAfter(Testo,wordString);
+Eff = sscanf(newStr,'%f');
