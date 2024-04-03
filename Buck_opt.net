@@ -1,0 +1,23 @@
+* C:\Users\franz\Desktop\MATLABCircuitOptimizer-main\Buck.asc
+M1 IN N001 SW SW BCDMOS l=600u w=1e-05
+M2 SW N002 0 0 BCDMOS l=600u w=1e-05
+V1 N002 0 PULSE(5 0 1u 2n 2n 1u 2u)
+V2 N001 SW PULSE(0 5 1u 2n 2n 1u 2u)
+VIN IN 0 24
+L SW OUT 2.2µ
+RLOAD OUT 0 12
+Co OUT 0 47µ
+.model NMOS NMOS
+.model PMOS PMOS
+.lib C:\Users\franz\Documents\LTspiceXVII\lib\cmp\standard.mos
+.tran 600u
+.model BCDMOS NMOS(Kp=90m Vto=0.7 Lambda=0.01 Rd=1m Rs=1m)
+.meas tran Pin AVG -V(IN)*I(VIN)
++ TRIG V(SW) VAL=12 TD=400u FALL=1
++ TARG V(SW) VAL=12 TD=550u FALL=1
+.meas tran Pout AVG V(OUT)*I(RLOAD)
++ TRIG V(SW) VAL=12 TD=400u FALL=1
++ TARG V(SW) VAL=12 TD=550u FALL=1
+.meas Eff param Pout/Pin
+.backanno
+.end

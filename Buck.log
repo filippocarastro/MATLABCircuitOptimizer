@@ -1,18 +1,26 @@
-LTspice 24.0.9 for Windows
-Circuit: * C:\Users\Filippo\Documents\PhD\MATLAB\Course\MATLABCircuitOptimizer\Buck.asc
-Start Time: Sat Mar 30 11:39:59 2024
-solver = Normal
-Maximum thread count: 4
+Circuit: * C:\Users\franz\Desktop\MATLABCircuitOptimizer-main\Buck.asc
+
+Direct Newton iteration for .op point succeeded.
+
+pin: AVG(-v(in)*i(vin))=12.2831 FROM 0.000400003 TO 0.000550003
+pout: AVG(v(out)*i(rload))=11.878 FROM 0.000400003 TO 0.000550003
+eff: pout/pin=0.96702
+
+
+Date: Wed Apr 03 19:57:54 2024
+Total elapsed time: 0.287 seconds.
+
 tnom = 27
 temp = 27
 method = modified trap
-Instance "m1": Length shorter than recommended for a level 1 MOSFET.
-Instance "m2": Length shorter than recommended for a level 1 MOSFET.
-Direct Newton iteration for .op point succeeded.
-
-pin: AVG(-v(in)*i(vin))=12.3498 FROM 0.000400003 TO 0.000550003
-pout: AVG(v(out)*i(rload))=11.6595 FROM 0.000400003 TO 0.000550003
-eff: pout/pin=0.944102
-
-Total elapsed time: 0.653 seconds.
+totiter = 121216
+traniter = 121210
+tranpoints = 36685
+accept = 29093
+rejected = 7592
+matrix size = 12
+fillins = 0
+solver = Normal
+Matrix Compiler1: 768 bytes object code size  0.1/0.1/[0.1]
+Matrix Compiler2: off  [0.1]/0.1/0.1
 
