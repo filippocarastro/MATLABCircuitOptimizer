@@ -1,0 +1,36 @@
+* C:\Users\Kreidos\Desktop\MATLABCircuitOptimizer-loop\Buck.asc
+M1 IN N006 N003 N003 BCDMOSHS l=600n w=$w1
+M2 N003 N011 0 0 BCDMOSLS l=600n w=$w2
+XU1 vcc N001 N005 N007 N008 0 N010 0 0 N011 vcc vcc N003 N006 N002 IN LTC3703
+Vcc vcc 0 10
+VIN IN 0 48
+L N003 OUT 10u
+R1 N008 0 10K
+R2 N001 0 25K
+R8 N005 N004 100K
+C5 N004 N007 2200p
+R9 OUT N007 113K
+R10 OUT N009 100
+C6 N009 N007 2200p
+C7 N010 0 .001u
+C8 N002 N003 .1u
+D2 0 N003 1N5817
+C9 N005 N007 1000p
+D3 vcc N002 1N5817
+RLOAD OUT 0 1
+R3 N007 0 8.06K
+C1 OUT 0 100u
+.model D D
+.lib C:\Users\Kreidos\Documents\LTspiceXVII\lib\cmp\standard.dio
+.model NMOS NMOS
+.model PMOS PMOS
+.lib C:\Users\Kreidos\Documents\LTspiceXVII\lib\cmp\standard.mos
+.tran 0 1.6m 1.5m startup
+.model BCDMOSHS NMOS(Kp=600u Vto=0.7 Lambda=0.01 Rd=$Rd_HS Cgso=15e-12 Cgdo=15e-12)
+.model BCDMOSLS NMOS(Kp=600u Vto=0.7 Lambda=0.01 Rd=$Rd_LS Cgso=15e-12 Cgdo=15e-12)
+.meas tran Pin AVG (-V(IN)*I(VIN) -V(vcc)*I(Vcc)) from 0  to 100u
+.meas tran Pout AVG V(OUT)*I(RLOAD)  from 0  to 100u
+.meas Eff param Pout/Pin
+.lib LTC3703.sub
+.backanno
+.end
