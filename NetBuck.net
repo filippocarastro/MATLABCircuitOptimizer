@@ -1,0 +1,38 @@
+* C:\Users\Kreidos\Desktop\MATLABCircuitOptimizer-Loop_stable\Buck.asc
+M1 IN N005 SW SW BCDMOSHS l=1u w=$w1
+M2 SW N010 0 0 BCDMOSLS l=1u w=$w2
+XU1 vcc N001 N004 N006 N007 0 N009 0 0 N010 vcc vcc SW N005 N002 IN LTC3703
+Vcc vcc 0 10
+VIN IN 0 48
+L SW OUT 10u Rser=3m Cpar=1p
+R1 N007 0 10K
+R2 N001 0 25K
+R8 N004 N003 100K
+C5 N003 N006 2200p
+R9 OUT N006 113K
+R10 OUT N008 100
+C6 N008 N006 2200p
+C7 N009 0 .001u
+C8 N002 SW .1u
+C9 N004 N006 1000p
+D3 vcc N002 1N5817
+RLOAD OUT 0 2.4
+R3 N006 0 8.06K
+C2 OUT 0 270u x2 Rser=10m
+.model D D
+.lib C:\Users\Kreidos\Documents\LTspiceXVII\lib\cmp\standard.dio
+.model NMOS NMOS
+.model PMOS PMOS
+.lib C:\Users\Kreidos\Documents\LTspiceXVII\lib\cmp\standard.mos
+.tran 0 2m 1.9m startup
+*.option cshunt=1e-15 reltol=0.003 abstol=1e-10 gmin=1e-10
+.model BCDMOSHS NMOS(Kp=75 Vto=2 Rg=1.5 Rd=$Rd_HS Cgso=1000e-12 Cgdo=1200e-12)
+.model BCDMOSLS NMOS(Kp=75 Vto=2 Rg=1.5 Rd=$Rd_LS Cgso=1000e-12 Cgdo=1200e-12)
+*.model BCDMOSHS NMOS(Kp=75 Vto=2 Rg=1.5 Rd=1.25m Cgso=1000e-12 Cgdo=1200e-12)
+*.model BCDMOSLS NMOS(Kp=75 Vto=2 Rg=1.5 Rd=1.775m Cgso=1000e-12 Cgdo=1200e-12)
+.meas tran Pin AVG (-V(IN)*I(VIN)-V(vcc)*I(Vcc))  from 0 to 100u
+.meas tran Pout AVG (V(OUT)*I(RLOAD))  from 0 to 100u
+.meas Eff param Pout/Pin
+.lib LTC3703.sub
+.backanno
+.end
