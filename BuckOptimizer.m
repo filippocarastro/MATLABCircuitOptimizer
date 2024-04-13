@@ -9,13 +9,13 @@ sim.RunLTstring = sprintf('"%s" -b "%s%s.net"',sim.spicePath, sim.filePath, sim.
 sim.netlist_filename = [sim.filePath 'Buck.net']; %original netlist with param
 % looks like buck.net autodelete.
 %Mos parameter to be opt
-W1 = 8e-3; %default
-W2 = 8e-3; %default
+W1 = 5e-3; %default
+W2 = 5e-3; %default
 val=[W1,W2];
 %fitness custom handle function
 fit= @(x) fitness(x,sim);
 fit(val)
 %%
-options = optimoptions('particleswarm','Display','Iter','SwarmSize',80);
+options = optimoptions('particleswarm','Display','Iter','SwarmSize',10);
 % PSO optimizer 
-[x_sol,f_sol,~,~] = particleswarm(fit,2,[10e-3; 10e-3],[25e-3; 25e-3],options);
+[x_sol,f_sol,~,~] = particleswarm(fit,2,[5e-3; 5e-3],[15e-3; 15e-3],options);

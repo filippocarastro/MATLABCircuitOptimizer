@@ -6,8 +6,8 @@ Testo=fread(h,Inf,'*char')';
 % replace features
 Testo=strrep(Testo,'$w1',num2str(features(1))); 
 Testo=strrep(Testo,'$w2',num2str(features(2)));
-Testo=strrep(Testo,'$Rd_HS',num2str(4*features(1))); 
-Testo=strrep(Testo,'$Rd_LS',num2str(4*features(2))); 
+Testo=strrep(Testo,'$Rd_HS',num2str(0.25*features(1))); 
+Testo=strrep(Testo,'$Rd_LS',num2str(0.25*features(2))); 
 fprintf('W_HS=%f\tW_LS=%f\n',features(1),features(2));
 fclose(h);
 % Write netlist to be simulated
@@ -27,11 +27,11 @@ fclose(fileID);
 newStr = extractAfter(Testo,'eff: pout/pin=');
 
 % minus the efficiency to minimize (max to min problem)
-eff = -sscanf(newStr,'%f');
+eff = -sscanf(newStr,'%f')
 
-if isempty(eff)
-    eff = 0;
-end
+% if isempty(eff)
+%     eff = 0;
+% end
 
 end
 
