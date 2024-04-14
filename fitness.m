@@ -29,9 +29,14 @@ newStr = extractAfter(Testo,'eff: pout/pin=');
 % minus the efficiency to minimize (max to min problem)
 eff = -sscanf(newStr,'%f')
 
-% if isempty(eff)
-%     eff = 0;
-% end
+% result = LTspice2Matlab(sim.LTSpice_outputfile); % parse output file
+% Vout=result.variable_mat(12,:);
+% Iout=result.variable_mat(36,:);
+% Vin = result.variable_mat(1,:);
+% IVin = result.variable_mat(39,:);
+% Pout = mean(Vout.*Iout);
+% Pin = mean(Vin.*IVin);
+% eff = Pout/Pin
 
 end
 

@@ -1,19 +1,47 @@
 LTspice 24.0.9 for Windows
 Circuit: * C:\Users\Filippo\Documents\PhD\MATLAB\Course\MATLABCircuitOptimizer\Buck.asc
-Start Time: Sat Apr 13 13:58:34 2024
+Start Time: Sun Apr 14 14:24:14 2024
 solver = Normal
 Maximum thread count: 4
 tnom = 27
 temp = 27
 method = modified trap
-Instance "m1": Length shorter than recommended for a level 1 MOSFET.
-Instance "m2": Length shorter than recommended for a level 1 MOSFET.
-Direct Newton iteration for .op point succeeded.
-Heightened Def Con from 0.000510281 to 0.000510282
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Increasing initial diagonal Gmin to 100
+Increasing initial diagonal Gmin to 1000
+Gmin = 1000
+Gmin = 107.374
+Gmin = 11.5292
+Gmin = 1.23794
+Gmin = 0.132923
+Gmin = 0.0142725
+Gmin = 0.0015325
+Gmin = 0.00016455
+Gmin = 1.76685e-05
+Gmin = 1.89714e-06
+Gmin = 2.03704e-07
+Gmin = 2.18725e-08
+Gmin = 2.34854e-09
+Gmin = 2.52173e-10
+Gmin = 2.70769e-11
+Gmin = 2.90735e-12
+Gmin = 3.12175e-13
+Gmin = 0
+Gmin stepping succeeded in finding the operating point.
 
-pin: AVG(-v(in)*i(vin))=61.2905 FROM 9.70967e-07 TO 2.09881e-05
-pout: AVG(v(out)*i(rload))=59.7841 FROM 9.70967e-07 TO 2.09881e-05
-eff: pout/pin=0.975421
+Heightened Def Con from 0.000311704 to 0.000311704
+Heightened Def Con from 0.000529747 to 0.000529747
+Heightened Def Con from 0.000694269 to 0.000694269
+Heightened Def Con from 0.000710126 to 0.000710126
+Heightened Def Con from 0.000813145 to 0.000813145
+Heightened Def Con from 0.00103106 to 0.00103106
+Heightened Def Con from 0.00108454 to 0.00108454
+Heightened Def Con from 0.00108652 to 0.00108652
 
-Total elapsed time: 5.351 seconds.
+pin: AVG(-v(in)*i(vin))=244.782 FROM 5.14882e-07 TO 1.63594e-05
+pout: AVG(v(out)*i(rload))=239.112 FROM 5.14882e-07 TO 1.63594e-05
+eff: pout/pin=0.976837
+
+Total elapsed time: 48.767 seconds.
 
