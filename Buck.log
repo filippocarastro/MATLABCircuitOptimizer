@@ -1,6 +1,6 @@
 LTspice 24.0.9 for Windows
 Circuit: * C:\Users\Filippo\Documents\PhD\MATLAB\Course\MATLABCircuitOptimizer\Buck.asc
-Start Time: Sun Apr 14 14:24:14 2024
+Start Time: Fri May  3 15:24:36 2024
 solver = Normal
 Maximum thread count: 4
 tnom = 27
@@ -30,18 +30,40 @@ Gmin = 3.12175e-13
 Gmin = 0
 Gmin stepping succeeded in finding the operating point.
 
-Heightened Def Con from 0.000311704 to 0.000311704
-Heightened Def Con from 0.000529747 to 0.000529747
-Heightened Def Con from 0.000694269 to 0.000694269
-Heightened Def Con from 0.000710126 to 0.000710126
-Heightened Def Con from 0.000813145 to 0.000813145
-Heightened Def Con from 0.00103106 to 0.00103106
-Heightened Def Con from 0.00108454 to 0.00108454
-Heightened Def Con from 0.00108652 to 0.00108652
+Heightened Def Con from 0.000184893 to 0.000184893
+Heightened Def Con from 0.000252243 to 0.000252243
+Heightened Def Con from 0.000281976 to 0.000281977
+Heightened Def Con from 0.000355308 to 0.000355309
+Heightened Def Con from 0.000396933 to 0.000396933
+Heightened Def Con from 0.000533398 to 0.000533398
+Heightened Def Con from 0.000541321 to 0.000541321
+Heightened Def Con from 0.000549562 to 0.000549562
+Heightened Def Con from 0.000559147 to 0.000559147
+Heightened Def Con from 0.000565419 +to 0.00056542
+Heightened Def Con from 0.000569389 to 0.000569389
+Heightened Def Con from 0.000574993 to 0.000574993
+Heightened Def Con from 0.000597133 to 0.000597134
+Heightened Def Con from 0.000603086 to 0.000603086
+Heightened Def Con from 0.000638759 to 0.000638759
+Heightened Def Con from 0.000759671 to 0.000759671
+Heightened Def Con from 0.000784943 to 0.000784943
+Heightened Def Con from 0.000832977 to 0.000832977
+Heightened Def Con from 0.000840402 to 0.000840402
+Heightened Def Con from 0.000870621 to 0.000870621
+Heightened Def Con from 0.000943909 to 0.000943909
+Heightened Def Con from 0.00094589 to 0.00094589
+Heightened Def Con from 0.000947359 to 0.000947359
+Heightened Def Con from 0.000985496 to 0.000985496
+Heightened Def Con from 0.000989464 to 0.000989464
+Heightened Def Con from 0.00101074 to 0.00101074
+Heightened Def Con from 0.00101917 to 0.00101917
+Heightened Def Con from 0.00103304 to 0.00103304
+Heightened Def Con from 0.00105878 to 0.00105878
+Heightened Def Con from 0.00111226 to 0.00111226
 
-pin: AVG(-v(in)*i(vin))=244.782 FROM 5.14882e-07 TO 1.63594e-05
-pout: AVG(v(out)*i(rload))=239.112 FROM 5.14882e-07 TO 1.63594e-05
-eff: pout/pin=0.976837
+pin: AVG(-v(in)*i(vin))=243.067 FROM 5.12137e-07 TO 1.63594e-05
+pout: AVG(v(out)*i(rload))=239.107 FROM 5.12137e-07 TO 1.63594e-05
+eff: pout/pin=0.983708
 
-Total elapsed time: 48.767 seconds.
+Total elapsed time: 43.205 seconds.
 
